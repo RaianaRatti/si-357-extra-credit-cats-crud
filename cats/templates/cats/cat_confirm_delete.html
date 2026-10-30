@@ -1,0 +1,10 @@
+{% extends "base_bootstrap.html" %}
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  Are you sure you want to delete "{{ cat }}"?
+  <input type="submit" value="Yes, delete.">
+  <a href="{% url 'cats:all' %}">Cancel</a>
+</form>
+{% endblock %}
